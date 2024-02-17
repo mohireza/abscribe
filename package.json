@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@microsoft/fetch-event-source": "^2.0.1",
+    "events": "^3.3.0",
+    "npm": "^9.8.1",
+    "util": "^0.12.5"
+  }
+}

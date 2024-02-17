@@ -1,0 +1,8 @@
+.messages-height {
+  // height: calc(100vh - 140px)
+  overflow: scroll;
+}
+
+.messages-card {
+  height: calc(100vh - 42px);
+}

@@ -1,0 +1,7 @@
+.viewer-card {
+  min-height: calc(100vh - 90px);
+  max-height: calc(100vh - 90px);
+}
+.viewer-body {
+  overflow-y: scroll;
+}

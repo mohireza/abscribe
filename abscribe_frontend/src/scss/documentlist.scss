@@ -1,0 +1,11 @@
+.timestamp {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: gray;
+}
+
+.dropdown-toggle::after {
+  position: relative;
+  display: none; //to hide down caret icon in react bootstrap dropdown menu
+}

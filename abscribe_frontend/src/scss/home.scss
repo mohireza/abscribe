@@ -1,0 +1,9 @@
+.feature-card {
+  transform: scale(1);
+  transition: transform 0.2s ease-out;
+}
+
+.feature-card:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}

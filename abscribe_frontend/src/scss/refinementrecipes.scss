@@ -1,0 +1,63 @@
+.recipe-result {
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+body {
+  background-image: url(http://fr.playstation.com/media/5ZfqPjVF/BigSkyInfinity_Hero_EN.JPG);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  font-family: "Open Sans", sans-serif;
+}
+
+.divider {
+  color: #ccc;
+  width: 95%;
+  margin: 5px auto;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.2em;
+}
+
+.divider:before,
+.divider:after {
+  content: "";
+  vertical-align: middle;
+  display: inline-block;
+  width: 50%;
+  border-bottom: 2px dotted #ccc;
+  margin: 0 2% 0 -55%;
+}
+.divider:after {
+  margin: 0 -55% 0 2%;
+}
+h1:nth-child(2) {
+  font-size: 3em;
+}
+span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.easy-edit-not-allowed {
+  cursor: pointer !important;
+}
+.easy-edit-button-wrapper {
+  display: block !important;
+}
+.easy-edit-component-wrapper {
+  display: block;
+  width: 100%;
+  padding-right: 10px;
+  overflow: auto;
+}
+.easy-edit-inline-wrapper {
+  // border: black 1px solid;
+}
+
+.easy-edit-hover-on {
+  background-color: rgb(239, 239, 239);
+  border-radius: 2px;
+
+  font-style: normal !important;
+}

@@ -1,0 +1,16 @@
+.full-height {
+  min-height: calc(100vh - 57px);
+}
+.chunk {
+  border-style: double;
+  background-color: #e9ffee;
+}
+
+.llm-buttons {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2000;
+}

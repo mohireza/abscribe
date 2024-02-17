@@ -1,0 +1,25 @@
+// body {
+//   overflow-x: hidden;
+// }
+
+.document-name {
+  width: 300px;
+  border: 0;
+  font-weight: bold;
+}
+.full-height {
+  min-height: calc(100vh - 42px);
+}
+.tab-container {
+  background-color: blue;
+}
+
+.editor-column {
+  width: calc(100vw - 200px);
+}
+.idea-bucket-column {
+  width: 200px;
+}
+.document-container {
+  width: 100vw;
+}

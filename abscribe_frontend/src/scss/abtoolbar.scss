@@ -1,0 +1,27 @@
+.toolbar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2000;
+}
+
+.recipes {
+  overflow: scroll;
+  max-width: 200px;
+  // display: flex;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+}
+
+.versions-container {
+  max-width: 200px;
+  overflow: auto;
+  // box-shadow: inset 0 0 10px #000000;
+}
+
+.dropdown {
+  box-shadow: -5px 0px 6px -6px grey;
+}

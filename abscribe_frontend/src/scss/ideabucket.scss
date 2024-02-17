@@ -1,0 +1,12 @@
+.idea-bucket-container {
+  height: calc(100vh - 83px);
+}
+.chunk-accordion {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.llm-result {
+  height: calc(28vh);
+  overflow-y: scroll;
+}
