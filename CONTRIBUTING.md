@@ -1,20 +1,72 @@
 # Contributing to ABScribe
 
-We're excited that you're interested in contributing to the AbTestingTools Backend project! Your contributions are valuable and will help improve the project for the entire community. This document provides guidelines and instructions for contributing to the project.
+We're excited that you're interested in contributing to the ABScribe project! Your contributions are valuable and will help improve the project for the entire community. This document provides guidelines and instructions for contributing to the project.
 
-## Code of Conduct
+## Set up
 
-Before contributing, please read and adhere to our [Code of Conduct](CODE_OF_CONDUCT.md). We are committed to fostering a welcoming and inclusive environment for all contributors.
+### Downloading the Repository
 
-## Getting Started
+To get started, make sure you have forked the repository. If you don't have experience with GitHub, you can follow the instructions in the [GitHub documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+Next, clone your fork to your local machine to begin setting up the development environment.
 
-1. Fork the repository on GitHub.
-2. Clone your fork to your local machine: `git clone https://github.com/yourusername/abscribe.git`
-3. Change to the backend directory: `cd abscribe/backend`
-4. Install dependencies and set up the development environment: `poetry install`
-5. Change to the frontend directory: `cd ../frontend`
-6. Install dependencies and set up the development environment: `npm install`
-7. Create a new branch for your changes: `git checkout -b my-feature-branch`
+```bash
+git clone https://github.com/yourusername/abscribe.git
+```
+
+### Dependencies
+
+This project includes a backend and a frontend. Both sets of dependencies are managed separately.
+
+To install the backend dependencies, navigate to the `abscribe_backend`
+
+```bash
+cd abscribe/backend
+```
+
+Then, install the dependencies and set up the development environment using [Poetry](https://python-poetry.org/).
+
+```bash
+poetry install
+```
+
+To install the frontend dependencies, navigate to the `abscribe_frontend` directory.
+
+```bash
+cd ../frontend
+```
+
+Then, install the dependencies using npm.
+
+```bash
+npm install
+```
+
+### Local Development Server
+
+You will need to run both the backend and frontend development servers to work on the project.
+
+To run the backend development server, navigate to the `abscribe_backend` directory and run the following command.
+
+```bash
+poetry run python app.py
+```
+
+To run the frontend development server, navigate to the `abscribe_frontend` directory and run the following command.
+
+```bash
+npm start
+```
+
+## Submitting a Pull Request
+
+1. Create a new branch for your changes: `git checkout -b my-feature-branch`
+2. Commit your changes: `git commit -m "Add my feature"`
+3. Push your changes to your fork: `git push origin my-feature-branch`
+4. Open a pull request on the original repository.
+5. Provide a clear and concise description of your changes in the pull request.
+6. Address any feedback or requested changes from the maintainers.
+
+This is only a basic outline of the process. For more detailed instructions, please refer to the [GitHub documentation](https://docs.github.com/en/pull-requests).
 
 ## Making Changes
 
@@ -23,14 +75,6 @@ Before contributing, please read and adhere to our [Code of Conduct](CODE_OF_CON
 - Add or update tests for any new or modified functionality.
 - Ensure that all tests pass before submitting a pull request.
 - Update documentation if necessary.
-
-## Submitting a Pull Request
-
-1. Commit your changes: `git commit -m "Add my feature"`
-2. Push your changes to your fork: `git push origin my-feature-branch`
-3. Open a pull request on the original repository.
-4. Provide a clear and concise description of your changes in the pull request.
-5. Address any feedback or requested changes from the maintainers.
 
 ## Reporting Issues
 
@@ -42,4 +86,4 @@ We welcome contributions from developers of all skill levels. If you have any qu
 
 ## Thank You
 
-Thank you for considering contributing to ABScribe Backend! Your contributions help make this project better for everyone.
+Thank you for considering contributing to ABScribe! Your contributions help make this project better for everyone.
