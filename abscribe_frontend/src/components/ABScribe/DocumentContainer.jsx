@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Editor from "./Editor";
 import Viewer from "./Viewer";
 import Badge from "react-bootstrap/Badge";
-import ABToolbar from "./ABToolbar";
+import PopupToolbar from "./PopupToolbar";
 import useLLM from "usellm";
 import Collapse from "react-bootstrap/Collapse";
 import VanillaEditor from "./VanillaEditor";
@@ -40,8 +40,8 @@ import ChatbotEditor from "./ChatbotEditor";
 
 export default function DocumentContainer() {
   //Refs for positioning AB Toolbar
-  const editorColRef = useRef(null); //For ABToolbar Positioning
-  const abToolbarRef = useRef(null); //For ABToolbar Positioning
+  const editorColRef = useRef(null); //For PopupToolbar Positioning
+  const PopupToolbarRef = useRef(null); //For PopupToolbar Positioning
 
   //Edit and Preview Tab Key
   const [tabKey, setTabKey] = useState("abscribe");
@@ -70,9 +70,9 @@ export default function DocumentContainer() {
   // that are actually visible in the document.
   const [chunksVisibleInDocument, setChunksVisbleInDocument] = useState([]);
 
-  const [abToolBarTop, setAbToolBarTop] = useState("");
-  const [abToolBarLeft, setAbToolBarLeft] = useState("");
-  const [abToolBarVisible, setAbToolBarVisible] = useState(false);
+  const [PopupToolbarTop, setPopupToolbarTop] = useState("");
+  const [PopupToolbarLeft, setPopupToolbarLeft] = useState("");
+  const [PopupToolbarVisible, setPopupToolbarVisible] = useState(false);
   const [ideaBucketVisible, setIdeaBucketVisible] = useState(true);
 
   const llm = useLLM({ serviceUrl: "https://usellm.org/api/llm" });
@@ -86,7 +86,7 @@ export default function DocumentContainer() {
 
   const [llmPrompts, setLlmPrompts] = useState([]);
 
-  const [disableABToolbar, setDisableABToolbar] = useState(false);
+  const [disablePopupToolbar, setDisablePopupToolbar] = useState(false);
 
   useEffect(() => {
     fetchDocument(documentId);
@@ -95,9 +95,9 @@ export default function DocumentContainer() {
   useEffect(() => {
     setRecipeResult("");
     if (activeChunkid) {
-      setAbToolBarVisible(true);
+      setPopupToolbarVisible(true);
     } else {
-      setAbToolBarVisible(false);
+      setPopupToolbarVisible(false);
     }
   }, [activeChunkid]);
 
@@ -470,7 +470,7 @@ export default function DocumentContainer() {
         }),
         async onopen(response) {
           // just remove the generating... text.
-          setDisableABToolbar(true);
+          setDisablePopupToolbar(true);
           tinymce.activeEditor.dom.setHTML(element, "");
         },
         onmessage(message) {
@@ -531,7 +531,7 @@ export default function DocumentContainer() {
         onclose() {
           // Finishes updating the document with the generated content. Also does other teardown code to end the streaming process.
           console.log("Closing generated version eventSource!");
-          setDisableABToolbar(false);
+          setDisablePopupToolbar(false);
 
           const current_version =
             tinymce.activeEditor.dom.get(activeChunkid).innerHTML; // FIXME: for some reason leaving this name unimported is actually the way to keep the app working?
@@ -684,7 +684,7 @@ export default function DocumentContainer() {
     }
   };
 
-  const updateAbToolBarLocation = (node) => {
+  const updatePopupToolbarLocation = (node) => {
     if (node) {
       tinymce.activeEditor.selection.select(node);
     }
@@ -693,15 +693,15 @@ export default function DocumentContainer() {
     let getRange = selection.getRng(0);
     let selectionRect = getRange.getBoundingClientRect();
     let editorRect = editorColRef.current.getBoundingClientRect();
-    let abToolbarRect = abToolbarRef.current.getBoundingClientRect();
+    let PopupToolbarRect = PopupToolbarRef.current.getBoundingClientRect();
 
-    // Set the ABToolbar Position
-    setAbToolBarTop(selectionRect.top + 80 + "px");
-    setAbToolBarLeft(
+    // Set the PopupToolbar Position
+    setPopupToolbarTop(selectionRect.top + 80 + "px");
+    setPopupToolbarLeft(
       selectionRect.left +
         editorRect.left +
         selectionRect.width * 0.5 -
-        abToolbarRect.width * 0.5 +
+        PopupToolbarRect.width * 0.5 +
         "px"
     );
   };
@@ -799,11 +799,11 @@ export default function DocumentContainer() {
                       // md={ideaBucketVisible ? 9 : 12}
                       className="p-0"
                     >
-                      <ABToolbar
-                        ref={abToolbarRef}
-                        top={abToolBarTop}
-                        left={abToolBarLeft}
-                        visible={abToolBarVisible}
+                      <PopupToolbar
+                        ref={PopupToolbarRef}
+                        top={PopupToolbarTop}
+                        left={PopupToolbarLeft}
+                        visible={PopupToolbarVisible}
                         activeChunkid={activeChunkid}
                         createChunk={createChunk}
                         currentDocument={currentDocument}
@@ -818,7 +818,7 @@ export default function DocumentContainer() {
                         setActiveRecipe={setActiveRecipe}
                         activeRecipe={activeRecipe}
                         generateVersion={generateVersion}
-                        disable={disableABToolbar}
+                        disable={disablePopupToolbar}
                       />
                       <Editor
                         createNewBlankDocument={createNewBlankDocument}
@@ -841,14 +841,14 @@ export default function DocumentContainer() {
                         getChunksFromFactorId={getChunksFromFactorId}
                         chunksVisibleInDocument={chunksVisibleInDocument}
                         setChunksVisbleInDocument={setChunksVisbleInDocument}
-                        abToolBarVisible={abToolBarVisible}
-                        setAbToolBarVisible={setAbToolBarVisible}
+                        PopupToolbarVisible={PopupToolbarVisible}
+                        setPopupToolbarVisible={setPopupToolbarVisible}
                         updateChunk={updateChunk}
-                        updateAbToolBarLocation={updateAbToolBarLocation}
-                        abToolBarTop={abToolBarTop}
-                        setAbToolBarTop={setAbToolBarTop}
-                        abToolBarLeft={abToolBarLeft}
-                        setAbToolBarLeft={setAbToolBarLeft}
+                        updatePopupToolbarLocation={updatePopupToolbarLocation}
+                        PopupToolbarTop={PopupToolbarTop}
+                        setPopupToolbarTop={setPopupToolbarTop}
+                        PopupToolbarLeft={PopupToolbarLeft}
+                        setPopupToolbarLeft={setPopupToolbarLeft}
                         ideaBucketVisible={ideaBucketVisible}
                         setIdeaBucketVisible={setIdeaBucketVisible}
                         createChunk={createChunk}
@@ -886,9 +886,9 @@ export default function DocumentContainer() {
                           getFactorColor={getFactorColor}
                           activeFactorId={activeFactorId}
                           visibleChunks={chunksVisibleInDocument}
-                          setAbToolBarVisible={setAbToolBarVisible}
+                          setPopupToolbarVisible={setPopupToolbarVisible}
                           updateChunk={updateChunk}
-                          updateAbToolBarLocation={updateAbToolBarLocation}
+                          updatePopupToolbarLocation={updatePopupToolbarLocation}
                           ideaBucketVisible={ideaBucketVisible}
                           setIdeaBucketVisible={setIdeaBucketVisible}
                           getChunkIndexFromId={getChunkIndexFromId}

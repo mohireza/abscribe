@@ -38,7 +38,7 @@ export default function IdeaBucket({
   setActiveChunkid,
   setActiveVersionIds,
   updateChunk,
-  updateAbToolBarLocation,
+  updatePopupToolbarLocation,
   getChunkIndexFromId,
   getVersionIndexFromId,
   createVersion,
@@ -122,7 +122,7 @@ export default function IdeaBucket({
                           onClick={() => {
                             setActiveChunkid(chunk.frontend_id);
                             updateActiveVersionId(chunk.frontend_id);
-                            updateAbToolBarLocation(
+                            updatePopupToolbarLocation(
                               tinymce.activeEditor.dom.get(chunk.frontend_id)
                             );
                           }}
@@ -157,7 +157,7 @@ export default function IdeaBucket({
                                   );
                                   // const nodeArray =
                                   //   editorRef.current.dom.select("p.answer");
-                                  updateAbToolBarLocation(
+                                  updatePopupToolbarLocation(
                                     tinymce.activeEditor.dom.get(
                                       chunk.frontend_id
                                     )

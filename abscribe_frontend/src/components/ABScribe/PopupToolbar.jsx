@@ -8,15 +8,15 @@ import {
   faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { faClone } from "@fortawesome/free-regular-svg-icons";
-import { useHorizontalScroll } from "../ABScribe/useHorizontalScroll";
+import { useHorizontalScroll } from "./useHorizontalScroll";
 import Select from "react-select";
 
 import useLLM from "usellm";
 
 import { Card, Button, ButtonGroup, Dropdown } from "react-bootstrap";
-import "../../scss/abtoolbar.scss";
+import "../../scss/popuptoolbar.scss";
 
-const ABToolbar = forwardRef(function MyInput(props, ref) {
+const PopupToolbar = forwardRef(function MyInput(props, ref) {
   const {
     top,
     left,
@@ -337,4 +337,4 @@ const ABToolbar = forwardRef(function MyInput(props, ref) {
   );
 });
 
-export default ABToolbar;
+export default PopupToolbar;

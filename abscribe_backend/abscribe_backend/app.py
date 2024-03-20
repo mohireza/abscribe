@@ -2,6 +2,7 @@
 import json
 import os
 from typing import Optional, List
+from dotenv import load_dotenv
 
 from flask import Flask, request, Response, jsonify
 
@@ -56,18 +57,17 @@ from abscribe_backend.services.feedback_item_version_service import (
 )
 
 app = Flask(__name__)
+load_dotenv()
+
 app.config["MONGODB_SETTINGS"] = {
-    "db": "test",
-    "host": os.getenv("MONGOHOST"),
-    "port": int(os.getenv("MONGOPORT")),
-    "username": os.getenv("MONGOUSER"),
-    "password": os.getenv("MONGOPASSWORD")
+    "db": "documents_db",
+    "host": "localhost",
+    "port": int(os.environ["MONGOPORT"]),
 }
 
-# Add this line after initializing your Flask app
 CORS(
     app,
-    origins="https://abtestingtools-frontend.up.railway.app",
+    origins=["http://127.0.0.1:5173", "https://abtestingtools-frontend.up.railway.app", "http://localhost:5173"],
     # resources={r"/api/*": {"origins": "http://localhost:5173"}},
 )
 

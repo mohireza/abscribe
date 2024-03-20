@@ -5,7 +5,7 @@ Read more about the project in this CHI2024 [preprint](https://arxiv.org/abs/231
 
 ## Paper
 
-To credit this system, please cite our CHI'24 paper:
+To credit this system, please cite our CHI'24 paper, "ABScribe: Rapid Exploration & Organization of Multiple Writing Variations in Human-AI Co-Writing Tasks using Large Language Models":
 Mohi Reza, Nathan Laundry, Ilya Musabirov, Peter Dushniku, Zhi Yuan "Michael" Yu, Kashish Mittal, Tovi Grossman, Michael Liut, Anastasia Kuzminykh and Joseph Jay Williams. 2024
 
 ```bibtex
@@ -30,7 +30,7 @@ To get started with ABScribe, visit [ABScribe.ca](https://abscribe.ca) or setup 
 
 ## Technologies Used
 
-* Frontend: React, Tailwind CSS
+* Frontend: React
 * Backend: Python, Flask, MongoDB
 
 ## Directory Structure

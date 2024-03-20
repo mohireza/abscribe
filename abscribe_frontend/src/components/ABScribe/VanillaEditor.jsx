@@ -30,14 +30,14 @@ export default function Editor() {
   //   getChunksFromFactorId,
   //   chunksVisibleInDocument,
   //   setChunksVisbleInDocument,
-  //   abToolBarVisible,
-  //   setAbToolBarVisible,
+  //   PopupToolbarVisible,
+  //   setPopupToolbarVisible,
   //   updateChunk,
-  //   updateAbToolBarLocation,
-  //   abToolBarTop,
-  //   abToolBarLeft,
-  //   setAbToolBarTop,
-  //   setAbToolBarLeft,
+  //   updatePopupToolbarLocation,
+  //   PopupToolbarTop,
+  //   PopupToolbarLeft,
+  //   setPopupToolbarTop,
+  //   setPopupToolbarLeft,
   //   ideaBucketVisible,
   //   setIdeaBucketVisible,
   //   createChunk,
@@ -216,27 +216,27 @@ export default function Editor() {
   //     } else {
   //         setActiveChunkid("");
   //         if (length === 0) {
-  //             setAbToolBarVisible(false);
+  //             setPopupToolbarVisible(false);
   //         }
   //     }
   // };
 
   // const handleEditorMouseUp = () => {
-  //     updateAbToolBarLocation();
+  //     updatePopupToolbarLocation();
 
   //     let selection = editorRef.current.editor.selection;
   //     let range = selection.getRng(0);
   //     const length = Math.abs(range.endOffset - range.startOffset);
   //     if (length > 0 || activeChunkid !== "") {
-  //         setAbToolBarVisible(true);
+  //         setPopupToolbarVisible(true);
   //     } else {
-  //         setAbToolBarVisible(false);
+  //         setPopupToolbarVisible(false);
   //     }
   // };
 
   // const handleEditorOnSelectionChange = () => {
   //     // handleEditorClick();
-  //     // updateAbToolBarLocation();
+  //     // updatePopupToolbarLocation();
   // };
 
   // const handleEditorOnChange = () => {
