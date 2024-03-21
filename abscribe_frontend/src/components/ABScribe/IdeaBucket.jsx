@@ -24,7 +24,7 @@ import {
   faTrashAlt,
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
-import RefinementRecipes from "./RefinementRecipes";
+import AIModifiers from "./AIModifiers";
 import parse from "html-react-parser";
 import "../../scss/ideabucket.scss";
 
@@ -249,7 +249,7 @@ export default function IdeaBucket({
               </Button>
             </ButtonGroup> */}
 
-          <RefinementRecipes
+          <AIModifiers
             selectVersions={selectVersions}
             activeChunkid={activeChunkid}
             activeVersionIds={activeVersionIds}

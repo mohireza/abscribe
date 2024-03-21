@@ -18,7 +18,7 @@ import "../../scss/refinementrecipes.scss";
 import { fetchEventSource } from "@microsoft/fetch-event-source";
 import { useParams } from "react-router-dom";
 
-export default function RefinementRecipes({
+export default function AIModifiers({
   selectVersions,
   activeVersionIds,
   activeChunkid,

@@ -87,7 +87,7 @@ Reusable components for the frontend application. These are the components that 
 
 * `IdeaBucket.jsx`: Sidebar component for storing and managing writing variations.
 
-* `RefinementRecipes.jsx`: Sidebar component for managing and applying LLM adjustments/recipes.
+* `AIModifiers.jsx`: Sidebar component for managing and applying LLM adjustments/recipes.
 
 * `DocumentContainer.jsx`: The main interface for user interaction. Combines the Editor and ABToolbar components.
 
