@@ -32,7 +32,7 @@ import {
   updateVersion,
   removeVersion,
 } from "../../services/versionService";
-import IdeaBucket from "./IdeaBucket";
+import VariationSidebar from "./VariationSidebar";
 import Experimentor from "./Experimentor";
 import { fetchEventSource } from "@microsoft/fetch-event-source";
 import { recipeService } from "../../services/recipeService";
@@ -73,7 +73,7 @@ export default function DocumentContainer() {
   const [PopupToolbarTop, setPopupToolbarTop] = useState("");
   const [PopupToolbarLeft, setPopupToolbarLeft] = useState("");
   const [PopupToolbarVisible, setPopupToolbarVisible] = useState(false);
-  const [ideaBucketVisible, setIdeaBucketVisible] = useState(true);
+  const [variationSidebarVisible, setVariationSidebarVisible] = useState(true);
 
   const llm = useLLM({ serviceUrl: "https://usellm.org/api/llm" });
   // States for LLM Recipes
@@ -796,7 +796,6 @@ export default function DocumentContainer() {
                   <Row>
                     <Col
                       ref={editorColRef}
-                      // md={ideaBucketVisible ? 9 : 12}
                       className="p-0"
                     >
                       <PopupToolbar
@@ -849,8 +848,8 @@ export default function DocumentContainer() {
                         setPopupToolbarTop={setPopupToolbarTop}
                         PopupToolbarLeft={PopupToolbarLeft}
                         setPopupToolbarLeft={setPopupToolbarLeft}
-                        ideaBucketVisible={ideaBucketVisible}
-                        setIdeaBucketVisible={setIdeaBucketVisible}
+                        variationSidebarVisible={variationSidebarVisible}
+                        setVariationSidebarVisible={setVariationSidebarVisible}
                         createChunk={createChunk}
                         deleteChunk={deleteChunk}
                         createVersion={createVersion}
@@ -874,9 +873,9 @@ export default function DocumentContainer() {
                         generateVersion={generateVersion}
                       />
                     </Col>
-                    <Collapse in={ideaBucketVisible} dimension={"width"}>
+                    <Collapse in={variationSidebarVisible} dimension={"width"}>
                       <Col md={3} className="p-0">
-                        <IdeaBucket
+                        <VariationSidebar
                           setTabKey={setTabKey}
                           activeChunkid={activeChunkid}
                           setActiveChunkid={setActiveChunkid}
@@ -889,8 +888,8 @@ export default function DocumentContainer() {
                           setPopupToolbarVisible={setPopupToolbarVisible}
                           updateChunk={updateChunk}
                           updatePopupToolbarLocation={updatePopupToolbarLocation}
-                          ideaBucketVisible={ideaBucketVisible}
-                          setIdeaBucketVisible={setIdeaBucketVisible}
+                          variationSidebarVisible={variationSidebarVisible}
+                          setVariationSidebarVisible={setVariationSidebarVisible}
                           getChunkIndexFromId={getChunkIndexFromId}
                           getVersionIndexFromId={getVersionIndexFromId}
                           updateActiveVersionId={updateActiveVersionId}

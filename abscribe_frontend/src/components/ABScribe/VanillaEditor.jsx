@@ -606,7 +606,7 @@ export default function Editor() {
                 //   "alignright alignjustify | bullist numlist outdent indent | " +
                 //   "removeformat | ideabucket",
                 toolbar:
-                  "blocks fontfamily fontsize |ideabucket recipes @ai-Templates|" +
+                  "blocks fontfamily fontsize |variationsidebar recipes @ai-Templates|" +
                   "bold italic forecolor hilitecolor | alignleft aligncenter " +
                   "alignright alignjustify | bullist numlist | code ",
 

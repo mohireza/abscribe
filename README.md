@@ -81,11 +81,11 @@ Functions for interacting with the backend API.
 
 Reusable components for the frontend application. These are the components that are currently used in the application:
 
-* `ABToolbar.jsx`: Toolbar component facilitating interaction with document. Main text editor utilities such as formatting, importing, etc.
+* `PopupToolbar.jsx`: Toolbar component facilitating interaction with document. Main text editor utilities such as formatting, importing, etc.
 
 * `Editor.jsx`: Rich text editor component for creating and editing documents.
 
-* `IdeaBucket.jsx`: Sidebar component for storing and managing writing variations.
+* `VariationSidebar.jsx`: Sidebar component for storing and managing writing variations.
 
 * `AIModifiers.jsx`: Sidebar component for managing and applying LLM adjustments/recipes.
 
