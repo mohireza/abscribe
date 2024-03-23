@@ -3,10 +3,12 @@ The only issue is how we get the messages, but that's presumably done as well.
 Task
 """
 import os
+from dotenv import load_dotenv
 import openai
 
 GPT_MODEL = "gpt-4"
-openai.api_key = os.getenv("OPENAI_API_KEY")
+load_dotenv()
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
 def get_chat(messages):
