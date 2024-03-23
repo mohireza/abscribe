@@ -20,13 +20,19 @@ This project includes a backend and a frontend. Both sets of dependencies are ma
 To install the backend dependencies, navigate to the `abscribe_backend`
 
 ```bash
-cd abscribe/backend
+cd abscribe_backend
 ```
 
 Then, install the dependencies and set up the development environment using [Poetry](https://python-poetry.org/).
 
 ```bash
 poetry install
+```
+
+To activate the virtual environment, run the following command.
+
+```bash
+poetry shell
 ```
 
 To install the frontend dependencies, navigate to the `abscribe_frontend` directory.
@@ -48,7 +54,7 @@ You will need to run both the backend and frontend development servers to work o
 To run the backend development server, navigate to the `abscribe_backend` directory and run the following command.
 
 ```bash
-poetry run python app.py
+poetry run flask run
 ```
 
 To run the frontend development server, navigate to the `abscribe_frontend` directory and run the following command.
@@ -56,6 +62,10 @@ To run the frontend development server, navigate to the `abscribe_frontend` dire
 ```bash
 npm start
 ```
+
+## API Keys
+
+You'll need a few API keys to run the project locally. Locate the `.env.example` file in the `abscribe_frontend` and `abscribe_backend` directories and rename it to `.env`. To get the TinyMCE API key for the frontend, visit the [TinyMCE website](https://www.tiny.cloud/) and sign up for an API key. Add the key to the `.env` file. For the backend set the MONGOPORT to a port of your choice that is not in use. For the OPENAI_API_KEY, visit the [OpenAI website](https://platform.openai.com/) and sign up for an API key.
 
 ## Submitting a Pull Request
 

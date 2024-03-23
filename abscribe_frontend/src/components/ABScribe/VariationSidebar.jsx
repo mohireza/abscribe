@@ -24,11 +24,11 @@ import {
   faTrashAlt,
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
-import RefinementRecipes from "./RefinementRecipes";
+import AIModifiers from "./AIModifiers";
 import parse from "html-react-parser";
-import "../../scss/ideabucket.scss";
+import "../../scss/variationsidebar.scss";
 
-export default function IdeaBucket({
+export default function VariationSidebar({
   activeChunkid,
   currentDocument,
   activeVersionIds,
@@ -38,7 +38,7 @@ export default function IdeaBucket({
   setActiveChunkid,
   setActiveVersionIds,
   updateChunk,
-  updateAbToolBarLocation,
+  updatePopupToolbarLocation,
   getChunkIndexFromId,
   getVersionIndexFromId,
   createVersion,
@@ -91,7 +91,7 @@ export default function IdeaBucket({
     <Card className="rounded-0 border-0">
       <Card.Header className="d-flex align-items-center justify-content-between">
         <strong>
-          <FontAwesomeIcon icon={faLightbulb} /> Idea Bucket
+          <FontAwesomeIcon icon={faLightbulb} /> Variation Sidebar
         </strong>
         {/* <Button
           variant="outline-dark"
@@ -104,7 +104,7 @@ export default function IdeaBucket({
         </Button> */}
       </Card.Header>
       {visibleChunks.length > 0 ? (
-        <div className="d-flex flex-column justify-content-between idea-bucket-container">
+        <div className="d-flex flex-column justify-content-between variation-sidebar-container">
           <Accordion
             activeKey={`${activeChunkid}`}
             flush
@@ -122,7 +122,7 @@ export default function IdeaBucket({
                           onClick={() => {
                             setActiveChunkid(chunk.frontend_id);
                             updateActiveVersionId(chunk.frontend_id);
-                            updateAbToolBarLocation(
+                            updatePopupToolbarLocation(
                               tinymce.activeEditor.dom.get(chunk.frontend_id)
                             );
                           }}
@@ -157,7 +157,7 @@ export default function IdeaBucket({
                                   );
                                   // const nodeArray =
                                   //   editorRef.current.dom.select("p.answer");
-                                  updateAbToolBarLocation(
+                                  updatePopupToolbarLocation(
                                     tinymce.activeEditor.dom.get(
                                       chunk.frontend_id
                                     )
@@ -249,7 +249,7 @@ export default function IdeaBucket({
               </Button>
             </ButtonGroup> */}
 
-          <RefinementRecipes
+          <AIModifiers
             selectVersions={selectVersions}
             activeChunkid={activeChunkid}
             activeVersionIds={activeVersionIds}
@@ -289,7 +289,7 @@ export default function IdeaBucket({
         </div>
       ) : (
         <>
-          <Card.Body className="d-flex flex-column align-items-center justify-content-center idea-bucket-container">
+          <Card.Body className="d-flex flex-column align-items-center justify-content-center variation-sidebar-container">
             <h1 className="display-1 text-muted">
               <FontAwesomeIcon icon={faLightbulb} />
             </h1>

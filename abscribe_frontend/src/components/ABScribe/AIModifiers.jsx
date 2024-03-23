@@ -14,11 +14,11 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import useLLM from "usellm";
-import "../../scss/refinementrecipes.scss";
+import "../../scss/aimodifiers.scss";
 import { fetchEventSource } from "@microsoft/fetch-event-source";
 import { useParams } from "react-router-dom";
 
-export default function RefinementRecipes({
+export default function AIModifiers({
   selectVersions,
   activeVersionIds,
   activeChunkid,

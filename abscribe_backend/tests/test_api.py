@@ -1,10 +1,13 @@
 import unittest
 import json
+import os
 from abscribe_backend.app import app
 from abscribe_backend.models.document import Document, db
 from abscribe_backend.services.chunk_service import add_chunk
 from abscribe_backend.services.version_service import add_version
+from dotenv import load_dotenv
 
+load_dotenv()
 
 
 class TestAPI(unittest.TestCase):
@@ -13,7 +16,7 @@ class TestAPI(unittest.TestCase):
         app.config["MONGODB_SETTINGS"] = {
             "db": "test_documents_db",
             "host": "localhost",
-            "port": 27017,
+            "port": int(os.environ["MONGOPORT"]),
         }
         cls.db = db
 

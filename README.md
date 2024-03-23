@@ -5,7 +5,7 @@ Read more about the project in this CHI2024 [preprint](https://arxiv.org/abs/231
 
 ## Paper
 
-To credit this system, please cite our CHI'24 paper:
+To credit this system, please cite our CHI'24 paper, "ABScribe: Rapid Exploration & Organization of Multiple Writing Variations in Human-AI Co-Writing Tasks using Large Language Models":
 Mohi Reza, Nathan Laundry, Ilya Musabirov, Peter Dushniku, Zhi Yuan "Michael" Yu, Kashish Mittal, Tovi Grossman, Michael Liut, Anastasia Kuzminykh and Joseph Jay Williams. 2024
 
 ```bibtex
@@ -30,7 +30,7 @@ To get started with ABScribe, visit [ABScribe.ca](https://abscribe.ca) or setup 
 
 ## Technologies Used
 
-* Frontend: React, Tailwind CSS
+* Frontend: React
 * Backend: Python, Flask, MongoDB
 
 ## Directory Structure
@@ -81,13 +81,13 @@ Functions for interacting with the backend API.
 
 Reusable components for the frontend application. These are the components that are currently used in the application:
 
-* `ABToolbar.jsx`: Toolbar component facilitating interaction with document. Main text editor utilities such as formatting, importing, etc.
+* `PopupToolbar.jsx`: Toolbar component facilitating interaction with document. Main text editor utilities such as formatting, importing, etc.
 
 * `Editor.jsx`: Rich text editor component for creating and editing documents.
 
-* `IdeaBucket.jsx`: Sidebar component for storing and managing writing variations.
+* `VariationSidebar.jsx`: Sidebar component for storing and managing writing variations.
 
-* `RefinementRecipes.jsx`: Sidebar component for managing and applying LLM adjustments/recipes.
+* `AIModifiers.jsx`: Sidebar component for managing and applying LLM adjustments/recipes.
 
 * `DocumentContainer.jsx`: The main interface for user interaction. Combines the Editor and ABToolbar components.
 
