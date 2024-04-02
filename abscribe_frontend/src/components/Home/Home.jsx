@@ -117,7 +117,7 @@ export default function Home() {
             </div>
             <div className="col-md-7 d-flex flex-column justify-content-center ">
               {demo == "video" ? (
-                <YoutubeEmbed embedId="m9Gibf7J7lM" />
+                <YoutubeEmbed embedId="Bpg4EVIKeEs" />
               ) : (
                 <img
                   src={gif[demo]}
