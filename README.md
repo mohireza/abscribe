@@ -1,7 +1,11 @@
 # ABScribe
 
 A research prototype for exploring and organizing multiple writing variations with Large Language Models.
-Read more about the project in this CHI2024 [preprint](https://arxiv.org/abs/2310.00117).
+Read more about the project in this CHI2024 [paper](https://arxiv.org/abs/2310.00117). 
+
+## Demo
+
+[![ABScribe Presentation](https://img.youtube.com/vi/ZHnnSJDDwYs/0.jpg)](https://www.youtube.com/watch?v=ZHnnSJDDwYs)
 
 ## Paper
 
